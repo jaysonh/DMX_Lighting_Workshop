@@ -23,8 +23,8 @@ void loop()
     dmx_master.setChannelValue ( 5, 0);    // white
     dmx_master.setChannelValue ( 6, 0);   // strobe
 
-    mySerial.write("ehllo");
-    /*char c = mySerial.read();
+    //mySerial.write("ehllo");
+    char c = mySerial.read();
       
     if(c != -1)
     //if (mySerial.available()) 
@@ -32,7 +32,7 @@ void loop()
       r = (int)random(0,255);
       g = (int)random(0,255);
       b = (int)random(0,255); 
-    }*/
+    }
 
     delay ( 100 );
 }
