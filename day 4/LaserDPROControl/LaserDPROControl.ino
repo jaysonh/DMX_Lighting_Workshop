@@ -17,15 +17,16 @@ void setup() {
 void loop() 
 { 
     // Light 1
-    dmx_master.setChannelValue ( 0, 40);    // ignore
-    dmx_master.setChannelValue ( 1, 255);  // on/off greater than 11 is on
-    dmx_master.setChannelValue ( 2, 32);  // mode (32-95) select pattern without sound
-    dmx_master.setChannelValue ( 3, 30);    // choice pattern folder
-    dmx_master.setChannelValue ( 4, 40);    // choice pattern 0-15 (off) 16> on ( every 12 new pattern)
-    dmx_master.setChannelValue ( 5, rotate);     // rotate (0-127)
+    dmx_master.setChannelValue ( 0, 40);    // don't change
+    dmx_master.setChannelValue ( 1, 255);  // don't change
+    dmx_master.setChannelValue ( 2, 32);   // don't change mode (32-95) select pattern without sound
+    dmx_master.setChannelValue ( 3, 240);    // choice pattern folder
+    dmx_master.setChannelValue ( 4, 60);    // choice pattern 0-15 (off) 16> on ( every 12 new pattern)
+    dmx_master.setChannelValue ( 5, 0);     // rotate (0-127)
     dmx_master.setChannelValue ( 9, 0);     // move left/right (0-127)
     dmx_master.setChannelValue ( 10, 0);     // move up/down (0-127)
-    dmx_master.setChannelValue ( 16, 10);   // colour pattern (8-15 white, 16-23 red, 24-31 yellow, 32-39 green, 40-47 light blue, 48-55blue, 56-64 purple)
+    dmx_master.setChannelValue ( 12, 0);     // scale
+    dmx_master.setChannelValue ( 20, 10);    // colour pattern (8-15 white, 16-23 red, 24-31 yellow, 32-39 green, 40-47 light blue, 48-55blue, 56-64 purple)
     
     rotate+=1;
     if(rotate>127)
@@ -34,5 +35,5 @@ void loop()
     }
   
 
-    delay ( 100 );
+    delay ( 50 );
 }
