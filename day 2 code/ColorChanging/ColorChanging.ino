@@ -1,15 +1,15 @@
 #include <Conceptinetics.h>
-#include <SoftwareSerial.h>
+
 
 DMX_Master dmx_master ( 100 , 2 );
-SoftwareSerial mySerial(10, 11); 
+
 int r = 255;
 int g = 255;
 int b = 255;
 
 void setup() {  
     dmx_master.enable ();
- mySerial.begin(4800);
+     
 }
 
 void loop() 
@@ -24,15 +24,23 @@ void loop()
     dmx_master.setChannelValue ( 6, 0);   // strobe
 
     //mySerial.write("ehllo");
-    char c = mySerial.read();
-      
-    if(c != -1)
-    //if (mySerial.available()) 
+    
+      while (mySerial.available() > 0) 
+      {
+        char inByte = mySerial.read();
+        if(inByte == 2 || (int)inByte ==2)
+        {
+            r = (int)random(0,255);
+            g = (int)random(0,255);
+            b = (int)random(0,255); 
+        }
+      }
+    /*if (mySerial.available()) 
     {
       r = (int)random(0,255);
       g = (int)random(0,255);
       b = (int)random(0,255); 
-    }
+    }*/
 
     delay ( 100 );
 }
