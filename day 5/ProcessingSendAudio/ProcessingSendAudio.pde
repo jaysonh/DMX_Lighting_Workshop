@@ -35,10 +35,9 @@ void draw()
      audioLoudness =255;
    }
    
-   if(arduinoBoard!=null)
-   {
-     arduinoBoard.write(audioLoudness);
-   }
+  
+    arduinoBoard.write(audioLoudness);
+   
    
 }
 void exit()
