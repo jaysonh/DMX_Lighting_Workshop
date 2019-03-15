@@ -18,7 +18,7 @@ Serial arduinoBoard;
   {
       println(i + ": " + devices[i]);
   }
-  int portNum=2;
+  int portNum=1;
   arduinoBoard = new Serial(this, Serial.list()[portNum], 4800);
   
   
